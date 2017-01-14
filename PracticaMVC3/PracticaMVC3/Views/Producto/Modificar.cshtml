@@ -1,0 +1,27 @@
+﻿
+@model  PracticaMVC3.Models.AccesoDatos.Producto
+@{
+    ViewBag.Title = "Modificar";
+}
+<h1>Modificar</h1>
+<form action="/Producto/GuardarModificacion">
+    <br />
+    <label>Nombre:</label>
+    <input name="Nombre" value="@Model.Nombre" />
+    <br />
+    <label>Apellido:</label>
+    <input name="Precio" value="@Model.Precio" />
+    <br />
+    <label>Dni:</label>
+    <input name="Codigo" value="@Model.Codigo" />
+
+    @Html.Hidden("Id", @Model.Id)
+    <br />
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <h3>View.Bag.Mensaje</h3>
+    }
+    <input type="submit" value="Guardar" />
+
+</form>

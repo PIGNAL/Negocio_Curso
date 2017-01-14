@@ -1,0 +1,31 @@
+﻿@model List<PracticaMVC3.Models.AccesoDatos.Proveedor>
+
+<h1>Lista de Proveedor</h1>
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Codigo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var proveedor in Model)
+        {
+            <tr>
+                <td>@proveedor.Nombre</td>
+                <td>@proveedor.Direccion</td>
+                <td>@proveedor.Codigo</td>
+                <td>@Html.ActionLink("Modificar", "Modificar", new { id = @proveedor.Id })</td>
+                <td>@Html.ActionLink("Eliminar", "Eliminar", new { id = @proveedor.Id })</td>
+            </tr>
+        }
+        @Html.ActionLink("Buscar", "Busqueda", "Proveedor")
+    </tbody>
+</table>
+<input id="txt-prueba" type="text" value="prueba" />
+<input id="btn-buscar" type="button" value="Buscar" />
+<div id="div-resultado"></div>
+<script src="~/scripts/jquery-1.10.2.js"></script>
+<script src="~/scripts/bootstrap.min.js"></script>
+<script src="~/scripts/Listar-Proveedor.js"></script>

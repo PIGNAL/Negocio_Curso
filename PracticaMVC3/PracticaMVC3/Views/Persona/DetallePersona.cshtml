@@ -1,0 +1,15 @@
+﻿@model PracticaMVC3.ViewModels.PersonaViewModel
+@{
+    ViewBag.Title = "DetallePersona";
+}
+
+<h2>DetallePersona</h2>
+<label>Nombre:</label>
+<label>@Model.Nombre</label>
+<br/>
+<label>Apellido:</label>
+<label>@Model.Apellido</label>
+<br />
+<label>Dni:</label>
+<label>@Model.Dni</label>
+@Html.ActionLink("Volver a Lista","ObtenerLista","Persona")

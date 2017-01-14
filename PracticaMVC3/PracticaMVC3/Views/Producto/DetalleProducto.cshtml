@@ -1,0 +1,15 @@
+﻿@model PracticaMVC3.ViewModels.ProductoViewModel
+@{
+    ViewBag.Title = "DetalleProducto";
+}
+
+<h2>DetalleProducto</h2>
+<label>Nombre:</label>
+<label>@Model.Nombre</label>
+<br />
+<label>Apellido:</label>
+<label>@Model.Precio</label>
+<br />
+<label>Dni:</label>
+<label>@Model.Codigo</label>
+@Html.ActionLink("Volver a Lista", "ObtenerLista", "Producto")

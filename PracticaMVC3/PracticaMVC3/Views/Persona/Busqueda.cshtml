@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Busqueda";
+}
+
+<h2>Busqueda</h2>
+@using (Html.BeginForm("DetallePersona", "Persona"))
+{
+    @Html.ValidationSummary()
+    <label>Ingrese alguna caracteristica referida a la persona a buscar</label>
+    <input name="parametroBusqueda"/>
+    <input type="submit"/>
+}
+
