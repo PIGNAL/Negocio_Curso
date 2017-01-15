@@ -1,0 +1,20 @@
+﻿@model List<PracticaMVC3.Models.AccesoDatos.Venta>
+
+<h1>Lista de Ventas</h1>
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venta in Model)
+        {
+            <tr>
+                <td>@venta.Fecha</td>
+                <td>@venta.Total</td>
+            </tr>
+        }
+    </tbody>
+</table>

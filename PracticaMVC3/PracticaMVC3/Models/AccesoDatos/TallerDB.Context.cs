@@ -28,5 +28,8 @@ namespace PracticaMVC3.Models.AccesoDatos
         public virtual DbSet<Persona> Persona { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Proveedor> Proveedor { get; set; }
+        public virtual DbSet<DetalleVenta> DetalleVentaSet1 { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Venta> Venta { get; set; }
     }
 }

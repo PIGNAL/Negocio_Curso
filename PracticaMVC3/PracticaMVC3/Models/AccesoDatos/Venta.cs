@@ -12,18 +12,17 @@ namespace PracticaMVC3.Models.AccesoDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class Venta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto()
+        public Venta()
         {
             this.DetalleVenta = new HashSet<DetalleVenta>();
         }
     
-        public string Nombre { get; set; }
-        public string Precio { get; set; }
-        public string Codigo { get; set; }
         public int Id { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public decimal Total { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }

@@ -8,6 +8,11 @@
         <EntityTypeShape EntityType="TallerModel.Persona" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TallerModel.Producto" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TallerModel.Proveedor" Width="1.5" PointX="4.625" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TallerModel.DetalleVenta" Width="1.5" PointX="6.375" PointY="2.75" />
+        <EntityTypeShape EntityType="TallerModel.sysdiagrams" Width="1.5" PointX="8.375" PointY="2.25" />
+        <EntityTypeShape EntityType="TallerModel.Venta" Width="1.5" PointX="1.625" PointY="3.875" />
+        <AssociationConnector Association="TallerModel.FK_DetalleVentaSet_Producto" />
+        <AssociationConnector Association="TallerModel.FK_DetalleVentaSet_Venta" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

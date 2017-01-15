@@ -168,8 +168,12 @@
     <Compile Include="Controllers\PersonaController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccesoDatos\DetalleVenta.cs">
+      <DependentUpon>TallerDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccesoDatos\Pers.cs" />
     <Compile Include="Models\AccesoDatos\Persona.cs">
@@ -186,6 +190,10 @@
     <Compile Include="Models\AccesoDatos\RepositorioPersona.cs" />
     <Compile Include="Models\AccesoDatos\RepositorioProducto.cs" />
     <Compile Include="Models\AccesoDatos\RepositorioProveedor.cs" />
+    <Compile Include="Models\AccesoDatos\RepositorioVenta.cs" />
+    <Compile Include="Models\AccesoDatos\sysdiagrams.cs">
+      <DependentUpon>TallerDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccesoDatos\TallerDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,9 +209,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TallerDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AccesoDatos\Venta.cs">
+      <DependentUpon>TallerDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LogicaNegocio\GestorPersona.cs" />
     <Compile Include="Models\LogicaNegocio\GestorProducto.cs" />
     <Compile Include="Models\LogicaNegocio\GestorProveedor.cs" />
+    <Compile Include="Models\LogicaNegocio\GestorVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PersonaViewModel.cs" />
     <Compile Include="ViewModels\ProductoViewModel.cs" />
@@ -239,6 +251,8 @@
     <Content Include="Views\Producto\Busqueda.cshtml" />
     <Content Include="Views\Proveedor\DetalleProveedor.cshtml" />
     <Content Include="Views\Proveedor\Busqueda.cshtml" />
+    <Content Include="Views\Venta\MenuVenta.cshtml" />
+    <Content Include="Views\Venta\ListarVenta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
