@@ -1,4 +1,6 @@
-﻿using PracticaMVC3.Models.LogicaNegocio;
+﻿using PracticaMVC3.Models.AccesoDatos;
+using PracticaMVC3.Models.LogicaNegocio;
+using PracticaMVC3.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,32 @@ namespace PracticaMVC3.Controllers
         {
             var listaVenta = gestor.Listar();
             return View(listaVenta);
+        }
+        public ActionResult Guardar(Venta venta)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Crear", venta);
+            }
+            try
+            {
+                gestor.Guardar(venta);
+                return RedirectToAction("ObtenerLista");
+            }
+            catch
+            {
+                ModelState.AddModelError(string.Empty, "Error");
+                return View("Crear", venta);
+            }
+       
+        }
+        public ActionResult Crear()
+        {
+            return View(new VentaViewModel());
+        }
+        public ActionResult Venta()
+        {
+            return View();
         }
     }
 }

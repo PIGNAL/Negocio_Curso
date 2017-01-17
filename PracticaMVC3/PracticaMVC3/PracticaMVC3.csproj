@@ -154,6 +154,7 @@
     <Content Include="scripts\Listar-Proveedor.js" />
     <Content Include="scripts\Listar.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\Venta.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Persona\Crear.cshtml" />
     <Content Include="Views\Producto\ObtenerLista.cshtml" />
@@ -220,6 +221,7 @@
     <Compile Include="ViewModels\PersonaViewModel.cs" />
     <Compile Include="ViewModels\ProductoViewModel.cs" />
     <Compile Include="ViewModels\ProveedorViewModel.cs" />
+    <Compile Include="ViewModels\VentaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -253,6 +255,7 @@
     <Content Include="Views\Proveedor\Busqueda.cshtml" />
     <Content Include="Views\Venta\MenuVenta.cshtml" />
     <Content Include="Views\Venta\ListarVenta.cshtml" />
+    <Content Include="Views\Venta\Venta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

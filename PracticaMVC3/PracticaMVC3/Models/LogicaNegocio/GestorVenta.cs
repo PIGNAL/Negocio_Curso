@@ -13,5 +13,9 @@ namespace PracticaMVC3.Models.LogicaNegocio
         {
             return repo.Listar();
         }
+        public void Guardar(Venta venta)
+        {
+            repo.Guardar(venta);
+        }
     }
 }
