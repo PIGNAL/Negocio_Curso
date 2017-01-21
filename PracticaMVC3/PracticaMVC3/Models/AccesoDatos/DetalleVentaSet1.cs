@@ -12,7 +12,7 @@ namespace PracticaMVC3.Models.AccesoDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class DetalleVenta
+    public partial class DetalleVentaSet1
     {
         public int Id { get; set; }
         public Nullable<int> IdVenta { get; set; }

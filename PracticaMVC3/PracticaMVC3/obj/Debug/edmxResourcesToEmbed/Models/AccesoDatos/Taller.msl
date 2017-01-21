@@ -1,38 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="TallerModelStoreContainer" CdmEntityContainer="Taller">
-    <EntitySetMapping Name="Persona">
-      <EntityTypeMapping TypeName="IsTypeOf(TallerModel.Persona)">
-        <MappingFragment StoreEntitySet="Persona">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-          <ScalarProperty Name="Dni" ColumnName="Dni" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Producto">
-      <EntityTypeMapping TypeName="IsTypeOf(TallerModel.Producto)">
-        <MappingFragment StoreEntitySet="Producto">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Proveedor">
-      <EntityTypeMapping TypeName="IsTypeOf(TallerModel.Proveedor)">
-        <MappingFragment StoreEntitySet="Proveedor">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="TallerModelStoreContainer" CdmEntityContainer="TallerEntities">
     <EntitySetMapping Name="DetalleVentaSet1">
-      <EntityTypeMapping TypeName="IsTypeOf(TallerModel.DetalleVenta)">
+      <EntityTypeMapping TypeName="TallerModel.DetalleVentaSet1">
         <MappingFragment StoreEntitySet="DetalleVentaSet1">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
@@ -40,19 +10,49 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="TallerModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="TallerModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="TallerModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="IsTypeOf(TallerModel.sysdiagrams)">
+      <EntityTypeMapping TypeName="TallerModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
           <ScalarProperty Name="version" ColumnName="version" />
           <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Venta">
-      <EntityTypeMapping TypeName="IsTypeOf(TallerModel.Venta)">
+      <EntityTypeMapping TypeName="TallerModel.Venta">
         <MappingFragment StoreEntitySet="Venta">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />

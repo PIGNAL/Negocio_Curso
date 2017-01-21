@@ -1,61 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="TallerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="DetalleVentaSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdVenta" Type="int" />
-    <Property Name="IdProducto" Type="int" />
-  </EntityType>
+<Schema Namespace="TallerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TallerModelStoreContainer">
+    <EntitySet Name="Persona" EntityType="TallerModel.Store.Persona" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto" EntityType="TallerModel.Store.Producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proveedor" EntityType="TallerModel.Store.Proveedor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleVentaSet1" EntityType="TallerModel.Store.DetalleVentaSet1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="TallerModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Venta" EntityType="TallerModel.Store.Venta" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DetalleVentaSet_Producto" Association="TallerModel.Store.FK_DetalleVentaSet_Producto">
+      <End Role="Producto" EntitySet="Producto" />
+      <End Role="DetalleVentaSet" EntitySet="DetalleVentaSet1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetalleVentaSet_Venta" Association="TallerModel.Store.FK_DetalleVentaSet_Venta">
+      <End Role="Venta" EntitySet="Venta" />
+      <End Role="DetalleVentaSet" EntitySet="DetalleVentaSet1" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="Persona">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Dni" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Dni" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Precio" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Codigo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Precio" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Codigo" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Proveedor">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Direccion" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Codigo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Codigo" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleVentaSet1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdVenta" Type="int" Nullable="true" />
+    <Property Name="IdProducto" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
     <Property Name="principal_id" Type="int" Nullable="false" />
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Venta">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fecha" Type="date" Nullable="false" />
-    <Property Name="Total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" Precision="18" Scale="0" />
   </EntityType>
   <Association Name="FK_DetalleVentaSet_Producto">
-    <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
-    <End Role="DetalleVentaSet" Type="Self.DetalleVentaSet" Multiplicity="*" />
+    <End Role="Producto" Type="TallerModel.Store.Producto" Multiplicity="0..1" />
+    <End Role="DetalleVentaSet" Type="TallerModel.Store.DetalleVentaSet1" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Producto">
         <PropertyRef Name="Id" />
@@ -66,8 +82,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_DetalleVentaSet_Venta">
-    <End Role="Venta" Type="Self.Venta" Multiplicity="0..1" />
-    <End Role="DetalleVentaSet" Type="Self.DetalleVentaSet" Multiplicity="*" />
+    <End Role="Venta" Type="TallerModel.Store.Venta" Multiplicity="0..1" />
+    <End Role="DetalleVentaSet" Type="TallerModel.Store.DetalleVentaSet1" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Venta">
         <PropertyRef Name="Id" />
@@ -77,20 +93,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="TallerModelStoreContainer">
-    <EntitySet Name="DetalleVentaSet" EntityType="Self.DetalleVentaSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_DetalleVentaSet_Producto" Association="Self.FK_DetalleVentaSet_Producto">
-      <End Role="Producto" EntitySet="Producto" />
-      <End Role="DetalleVentaSet" EntitySet="DetalleVentaSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DetalleVentaSet_Venta" Association="Self.FK_DetalleVentaSet_Venta">
-      <End Role="Venta" EntitySet="Venta" />
-      <End Role="DetalleVentaSet" EntitySet="DetalleVentaSet" />
-    </AssociationSet>
-  </EntityContainer>
 </Schema>

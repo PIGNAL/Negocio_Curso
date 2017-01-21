@@ -1,20 +1,50 @@
-﻿
+﻿@model List<PracticaMVC3.Models.AccesoDatos.Producto>
 @{
     ViewBag.Title = "Venta";
 }
-
-<h2>Venta</h2>
-<table style="width:25%">
-    <tr>
-        <th>Cantidad</th>
-        <th>Codigo</th>
-        <th>Nombre</th>
-        <th>Precio</th>
-        <th><button onclick="BorrarRegistro()" value="borrarRegistro" /></th>
-    </tr>
- 
-</table>
-table {
-    border-spacing: 5px;
-}
+<body>
+    <h2>Venta</h2>
+    
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.Nombre</td>
+                    <td>@producto.Precio</td>
+                    <td>@producto.Codigo</td>     
+                </tr>
+            }
+        </tbody>
+    </table>
+        <label id="lbCodigo">Codigo</label>
+        <input type="text" id="txtCodigo" />
+        <label id="lbNombre">Nombre</label>
+        <input type="text" id="txtNombre" />
+        <label id="lbCantidad">Cantidad</label>
+        <input type="text" id="txtCantidad" />
+        <label id="lbPrecio">Precio</label>
+        <input type="text" id="txtPrecio" />
+        <input type="button" id="btnCargarVenta" value="Cargar Venta">
+        <table style="width:25%" border="1">
+            <tr>
+                <th>Cantidad</th>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th><input type="button" onclick="BorrarRegistro()"></th>
+            </tr>
+            <tr></tr>
+        </table>
+        <label id="lbTotal">Total:</label>
+        <label>Cargar Venta Total</label>
+        <input type="submit" />
+</body>
 <script src="~/scripts/Venta.js"></script>

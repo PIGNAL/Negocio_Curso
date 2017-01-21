@@ -17,7 +17,7 @@ namespace PracticaMVC3.Models.AccesoDatos
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Producto()
         {
-            this.DetalleVenta = new HashSet<DetalleVenta>();
+            this.DetalleVentaSet1 = new HashSet<DetalleVentaSet1>();
         }
     
         public string Nombre { get; set; }
@@ -26,6 +26,6 @@ namespace PracticaMVC3.Models.AccesoDatos
         public int Id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleVenta> DetalleVenta { get; set; }
+        public virtual ICollection<DetalleVentaSet1> DetalleVentaSet1 { get; set; }
     }
 }

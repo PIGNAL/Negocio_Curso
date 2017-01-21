@@ -11,6 +11,7 @@ namespace PracticaMVC3.Controllers
 {
     public class VentaController : Controller
     {
+        GestorProducto gestorPro = new GestorProducto();
         GestorVenta gestor = new GestorVenta();
         public ActionResult MenuVenta()
         {
@@ -45,7 +46,8 @@ namespace PracticaMVC3.Controllers
         }
         public ActionResult Venta()
         {
-            return View();
+            var listaProducto = gestorPro.ObtenerLista();
+            return View(listaProducto);
         }
     }
 }

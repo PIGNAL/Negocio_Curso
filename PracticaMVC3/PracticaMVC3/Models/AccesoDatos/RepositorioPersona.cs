@@ -7,7 +7,7 @@ namespace PracticaMVC3.Models.AccesoDatos
 {
     public class RepositorioPersona
     {
-        Taller baseDatos = new Taller();
+        TallerEntities baseDatos = new TallerEntities();
         public void Guardar(Persona persona)
         {
             baseDatos.Persona.Add(persona);

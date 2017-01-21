@@ -7,7 +7,7 @@ namespace PracticaMVC3.Models.AccesoDatos
 {
     public class RepositorioProducto
     {
-        Taller baseDatos = new Taller();
+        TallerEntities baseDatos = new TallerEntities();
         public void Guardar(Producto producto)
         {
             baseDatos.Producto.Add(producto);
