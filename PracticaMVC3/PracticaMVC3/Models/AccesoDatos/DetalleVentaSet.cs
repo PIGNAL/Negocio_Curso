@@ -12,12 +12,13 @@ namespace PracticaMVC3.Models.AccesoDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class DetalleVentaSet
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> IdVenta { get; set; }
+        public Nullable<int> IdProducto { get; set; }
+    
+        public virtual Producto Producto { get; set; }
+        public virtual Venta Venta { get; set; }
     }
 }

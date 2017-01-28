@@ -8,7 +8,7 @@ namespace PracticaMVC3.Models.AccesoDatos
     
     public class RepositorioVenta
     {
-        TallerEntities baseDatos = new TallerEntities();
+        TallerEntities1 baseDatos = new TallerEntities1();
         public List<Venta>Listar()
         {
             return baseDatos.Venta.ToList();

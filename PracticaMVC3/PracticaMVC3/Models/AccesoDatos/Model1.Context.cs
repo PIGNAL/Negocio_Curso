@@ -13,10 +13,10 @@ namespace PracticaMVC3.Models.AccesoDatos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TallerEntities : DbContext
+    public partial class TallerEntities1 : DbContext
     {
-        public TallerEntities()
-            : base("name=TallerEntities")
+        public TallerEntities1()
+            : base("name=TallerEntities1")
         {
         }
     
@@ -25,11 +25,10 @@ namespace PracticaMVC3.Models.AccesoDatos
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DetalleVentaSet1> DetalleVentaSet1 { get; set; }
+        public virtual DbSet<DetalleVentaSet> DetalleVentaSet { get; set; }
         public virtual DbSet<Persona> Persona { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Proveedor> Proveedor { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Venta> Venta { get; set; }
     }
 }

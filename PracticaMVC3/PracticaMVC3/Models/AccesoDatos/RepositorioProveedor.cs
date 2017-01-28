@@ -7,7 +7,7 @@ namespace PracticaMVC3.Models.AccesoDatos
 {
     public class RepositorioProveedor
     {
-        TallerEntities baseDatos = new TallerEntities();
+        TallerEntities1 baseDatos = new TallerEntities1();
         public void Guardar(Proveedor proveedor)
         {
             baseDatos.Proveedor.Add(proveedor);

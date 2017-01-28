@@ -134,26 +134,26 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\AccesoDatos\Taller.Context.tt">
+    <Content Include="Models\AccesoDatos\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Taller.edmx</DependentUpon>
-      <LastGenOutput>Taller.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\AccesoDatos\Taller.tt">
+    <Content Include="Models\AccesoDatos\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Taller.edmx</DependentUpon>
-      <LastGenOutput>Taller.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\AccesoDatos\Taller.edmx">
+    <EntityDeploy Include="Models\AccesoDatos\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Taller.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\AccesoDatos\Taller.edmx.diagram">
-      <DependentUpon>Taller.edmx</DependentUpon>
+    <Content Include="Models\AccesoDatos\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
@@ -181,45 +181,42 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccesoDatos\DetalleVentaSet1.cs">
-      <DependentUpon>Taller.tt</DependentUpon>
+    <Compile Include="Models\AccesoDatos\DetalleVentaSet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccesoDatos\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccesoDatos\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccesoDatos\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccesoDatos\Pers.cs" />
     <Compile Include="Models\AccesoDatos\Persona.cs">
-      <DependentUpon>Taller.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccesoDatos\Prod.cs" />
     <Compile Include="Models\AccesoDatos\Producto.cs">
-      <DependentUpon>Taller.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccesoDatos\Prov.cs" />
     <Compile Include="Models\AccesoDatos\Proveedor.cs">
-      <DependentUpon>Taller.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccesoDatos\RepositorioPersona.cs" />
     <Compile Include="Models\AccesoDatos\RepositorioProducto.cs" />
     <Compile Include="Models\AccesoDatos\RepositorioProveedor.cs" />
     <Compile Include="Models\AccesoDatos\RepositorioVenta.cs" />
-    <Compile Include="Models\AccesoDatos\sysdiagrams.cs">
-      <DependentUpon>Taller.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AccesoDatos\Taller.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Taller.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AccesoDatos\Taller.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Taller.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AccesoDatos\Taller.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Taller.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccesoDatos\Venta.cs">
-      <DependentUpon>Taller.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LogicaNegocio\GestorPersona.cs" />
     <Compile Include="Models\LogicaNegocio\GestorProducto.cs" />

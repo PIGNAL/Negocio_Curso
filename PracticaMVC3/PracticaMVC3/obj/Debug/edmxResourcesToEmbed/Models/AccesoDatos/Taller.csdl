@@ -22,21 +22,32 @@
   <EntityType Name="Producto">
     <Key>
       <PropertyRef Name="Id" />
+      <PropertyRef Name="id_producto" />
     </Key>
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Precio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="DetalleVentaSet1" Relationship="Self.FK_DetalleVentaSet_Producto" FromRole="Producto" ToRole="DetalleVentaSet1" />
+    <Property Name="id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stock" Type="Int32" />
+    <Property Name="precio" Type="Decimal" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="Proveedor">
     <Key>
       <PropertyRef Name="Id" />
+      <PropertyRef Name="id_proveedor" />
     </Key>
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="razon_social" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cuit" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -51,11 +62,13 @@
   <EntityType Name="Venta">
     <Key>
       <PropertyRef Name="Id" />
+      <PropertyRef Name="idVenta" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="DetalleVentaSet1" Relationship="Self.FK_DetalleVentaSet_Venta" FromRole="Venta" ToRole="DetalleVentaSet1" />
+    <Property Name="idVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <Association Name="FK_DetalleVentaSet_Producto">
     <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
@@ -96,5 +109,24 @@
       <End Role="Venta" EntitySet="Venta" />
       <End Role="DetalleVentaSet1" EntitySet="DetalleVentaSet1" />
     </AssociationSet>
+    <EntitySet Name="Cliente" EntityType="TallerModel.Cliente" />
+    <EntitySet Name="DetalleVenta" EntityType="TallerModel.DetalleVenta" />
   </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="idCliente" />
+    </Key>
+    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nro_dni" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="idDetalleVenta" />
+    </Key>
+    <Property Name="idDetalleVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idVenta" Type="Int32" />
+    <Property Name="idProducto" Type="Int32" />
+  </EntityType>
 </Schema>
